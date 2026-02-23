@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20abdc3d-58c7-4aa7-8913-160eb8fd63c0" name="Changes" comment="созданы сущность Card и для него CardController,CardService и CardRepository">
+    <list default="true" id="20abdc3d-58c7-4aa7-8913-160eb8fd63c0" name="Changes" comment="созданы классы TransferRequest и TransferController">
+      <change beforePath="$PROJECT_DIR$/${project.build.directory}/classes/README_Resources.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/${project.build.directory}/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/${project.build.directory}/classes/db/migration/README_Migration.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +107,7 @@
       <updated>1771854172586</updated>
       <workItem from="1771854172586" duration="336000" />
       <workItem from="1771854547242" duration="284000" />
-      <workItem from="1771854852971" duration="4982000" />
+      <workItem from="1771854852971" duration="6750000" />
     </task>
     <task id="LOCAL-00001" summary="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось">
       <option name="closed" value="true" />
@@ -128,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771879645903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="созданы классы TransferRequest и TransferController">
+      <option name="closed" value="true" />
+      <created>1771880678289</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771880678289</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +151,7 @@
     <MESSAGE value="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось" />
     <MESSAGE value="созданы сущность User и для него UserController,UserService и UserRepository" />
     <MESSAGE value="созданы сущность Card и для него CardController,CardService и CardRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="созданы сущность Card и для него CardController,CardService и CardRepository" />
+    <MESSAGE value="созданы классы TransferRequest и TransferController" />
+    <option name="LAST_COMMIT_MESSAGE" value="созданы классы TransferRequest и TransferController" />
   </component>
 </project>

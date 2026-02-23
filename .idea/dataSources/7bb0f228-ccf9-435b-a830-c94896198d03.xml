@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>741</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ServerVersion>15.16</ServerVersion>
       <StartupTime>1771852224</StartupTime>
       <TimeZones>true ACDT
@@ -699,7 +699,7 @@ false posixrules
 13273||10|C|G
 13273||-9223372036854775808|U|G
 13273||10|U|G</Grants>
-      <IntrospectionStateNumber>741</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4118,16 +4118,25 @@ false posixrules
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <LastIntrospectionL1Xid>741</LastIntrospectionL1Xid>
-      <LastIntrospectionL2Xid>741</LastIntrospectionL2Xid>
-      <LastIntrospectionL3Xid>741</LastIntrospectionL3Xid>
+      <LastIntrospectionL1Xid>745</LastIntrospectionL1Xid>
+      <LastIntrospectionL2Xid>745</LastIntrospectionL2Xid>
+      <LastIntrospectionL3Xid>745</LastIntrospectionL3Xid>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2026-02-23.18:40:21</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2026-02-23.20:38:51</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="users_id_seq">
+    <sequence id="263" parent="262" name="cards_id_seq">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16401</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>743</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="264" parent="262" name="users_id_seq">
       <DetailsLevel>2</DetailsLevel>
       <ObjectId>16389</ObjectId>
       <SequenceIdentity>1</SequenceIdentity>
@@ -4136,14 +4145,113 @@ false posixrules
       <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="264" parent="262" name="users">
+    <table id="265" parent="262" name="cards">
       <DetailsLevel>2</DetailsLevel>
-      <ObjectId>16390</ObjectId>
-      <StateNumber>739</StateNumber>
+      <ObjectId>16402</ObjectId>
+      <StateNumber>743</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="265" parent="264" name="id">
+    <table id="266" parent="262" name="users">
+      <DetailsLevel>2</DetailsLevel>
+      <ObjectId>16390</ObjectId>
+      <StateNumber>743</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="267" parent="265" name="id">
+      <DefaultExpression>nextval(&apos;cards_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <SequenceId>16401</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="268" parent="265" name="card_number">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="269" parent="265" name="owner_name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="270" parent="265" name="expiry_date">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar(7)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="271" parent="265" name="status">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>varchar(20)|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="272" parent="265" name="balance">
+      <DefaultExpression>0.00</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>numeric(10,2 digit)|0s</StoredType>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="273" parent="265" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>743</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="274" parent="265" name="fk_cards_users">
+      <ColNames>user_id</ColNames>
+      <ObjectId>16413</ObjectId>
+      <StateNumber>743</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16390</RefTableId>
+    </foreign-key>
+    <index id="275" parent="265" name="cards_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16409</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>743</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="276" parent="265" name="cards_card_number_key">
+      <ColNames>card_number</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16411</ObjectId>
+      <StateNumber>743</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="277" parent="265" name="cards_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16410</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>743</StateNumber>
+      <UnderlyingIndexId>16409</UnderlyingIndexId>
+    </key>
+    <key id="278" parent="265" name="cards_card_number_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16412</ObjectId>
+      <StateNumber>743</StateNumber>
+      <UnderlyingIndexId>16411</UnderlyingIndexId>
+    </key>
+    <column id="279" parent="266" name="id">
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -4152,35 +4260,35 @@ false posixrules
       <SequenceId>16389</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="266" parent="264" name="username">
+    <column id="280" parent="266" name="username">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>739</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="267" parent="264" name="password">
+    <column id="281" parent="266" name="password">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>739</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="268" parent="264" name="role">
+    <column id="282" parent="266" name="role">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>739</StateNumber>
       <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="269" parent="264" name="created_at">
+    <column id="283" parent="266" name="created_at">
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>5</Position>
       <StateNumber>739</StateNumber>
       <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <index id="270" parent="264" name="users_pkey">
+    <index id="284" parent="266" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16397</ObjectId>
@@ -4189,7 +4297,7 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="271" parent="264" name="users_username_key">
+    <index id="285" parent="266" name="users_username_key">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16399</ObjectId>
@@ -4200,14 +4308,14 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="272" parent="264" name="users_pkey">
+    <key id="286" parent="266" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16398</ObjectId>
       <Primary>1</Primary>
       <StateNumber>739</StateNumber>
       <UnderlyingIndexId>16397</UnderlyingIndexId>
     </key>
-    <key id="273" parent="264" name="users_username_key">
+    <key id="287" parent="266" name="users_username_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16400</ObjectId>
       <StateNumber>739</StateNumber>

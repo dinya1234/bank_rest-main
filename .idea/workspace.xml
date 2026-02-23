@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20abdc3d-58c7-4aa7-8913-160eb8fd63c0" name="Changes" comment="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="20abdc3d-58c7-4aa7-8913-160eb8fd63c0" name="Changes" comment="созданы сущность User и для него UserController,UserService и UserRepository">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bb0f228-ccf9-435b-a830-c94896198d03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bb0f228-ccf9-435b-a830-c94896198d03.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bb0f228-ccf9-435b-a830-c94896198d03/storage_v2/_src_/database/bank_db.YfHo6w/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7bb0f228-ccf9-435b-a830-c94896198d03/storage_v2/_src_/database/bank_db.YfHo6w/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="3A4aC38UChgvs8TF635vGK6qKN4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -101,7 +103,7 @@
       <updated>1771854172586</updated>
       <workItem from="1771854172586" duration="336000" />
       <workItem from="1771854547242" duration="284000" />
-      <workItem from="1771854852971" duration="2894000" />
+      <workItem from="1771854852971" duration="4149000" />
     </task>
     <task id="LOCAL-00001" summary="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось">
       <option name="closed" value="true" />
@@ -111,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771856068480</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="созданы сущность User и для него UserController,UserService и UserRepository">
+      <option name="closed" value="true" />
+      <created>1771873657733</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771873657733</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось" />
-    <option name="LAST_COMMIT_MESSAGE" value="создана бд в PostgreSQL&#10;добавление минимальных зависимостей для запуска &#10;запуск и проверка того что работает и запустилось" />
+    <MESSAGE value="созданы сущность User и для него UserController,UserService и UserRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="созданы сущность User и для него UserController,UserService и UserRepository" />
   </component>
 </project>

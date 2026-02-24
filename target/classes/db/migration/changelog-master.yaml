@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/v1-create-users-table.sql
+  - include:
+      file: db/migration/v2-create-cards-table.sql
+  - include:
+      file: db/migration/v3-add-test-data.sql

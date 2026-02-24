@@ -54,15 +54,13 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
         try {
-            // Аутентифицируем пользователя
+
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
             );
 
-            // Генерируем токен
             String token = jwtUtil.generateToken(request.getUsername());
 
-            // Получаем пользователя из базы для роли
             User user = userRepository.findByUsername(request.getUsername()).orElseThrow();
 
             return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole()));

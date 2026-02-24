@@ -2,10 +2,12 @@ package com.example.bankcards.service;
 
 import com.example.bankcards.entity.Card;
 import com.example.bankcards.entity.User;
+import com.example.bankcards.exception.ResourceNotFoundException;
 import com.example.bankcards.repository.CardRepository;
 import com.example.bankcards.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class CardService {
@@ -18,25 +20,37 @@ public class CardService {
         this.userRepository = userRepository;
     }
 
-    public List<Card> getAllCards() {
-        return cardRepository.findAll();
+    public Page<Card> getAllCards(Pageable pageable) {
+        return cardRepository.findAll(pageable);
     }
 
     public Card getCardById(Long id) {
         return cardRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Карта не найдена"));
+                .orElseThrow(() -> new ResourceNotFoundException("Карта не найдена с id: " + id));
     }
 
-    public Card createCard(Card card, Long userId) {
-        User user = userRepository.findById(userId)
+    public Card createCard(Card card, String username) {
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
         card.setUser(user);
         return cardRepository.save(card);
     }
 
-    public List<Card> getCardsByUser(Long userId) {
-        User user = userRepository.findById(userId)
+    public Page<Card> getCardsByUsername(String username, Pageable pageable) {
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
-        return cardRepository.findByUser(user);
+        return cardRepository.findByUser(user, pageable);
+    }
+
+    public Page<Card> searchCards(String ownerName, Card.CardStatus status, Pageable pageable) {
+        if (ownerName != null && status != null) {
+            return cardRepository.findByOwnerNameContainingIgnoreCaseAndStatus(ownerName, status, pageable);
+        } else if (ownerName != null) {
+            return cardRepository.findByOwnerNameContainingIgnoreCase(ownerName, pageable);
+        } else if (status != null) {
+            return cardRepository.findByStatus(status, pageable);
+        } else {
+            return cardRepository.findAll(pageable);
+        }
     }
 }

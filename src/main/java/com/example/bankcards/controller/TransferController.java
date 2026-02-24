@@ -2,6 +2,7 @@ package com.example.bankcards.controller;
 
 import com.example.bankcards.dto.TransferRequest;
 import com.example.bankcards.entity.Card;
+import com.example.bankcards.exception.InsufficientFundsException;
 import com.example.bankcards.repository.CardRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class TransferController {
                 .orElseThrow(() -> new RuntimeException("Карта получателя не найдена"));
 
         if (fromCard.getBalance().compareTo(request.getAmount()) < 0) {
-            return ResponseEntity.badRequest().body("Недостаточно средств");
+            throw new InsufficientFundsException("Недостаточно средств");
         }
 
         if (fromCard.getStatus() != Card.CardStatus.ACTIVE) {

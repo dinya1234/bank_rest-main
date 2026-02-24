@@ -1,3 +1,14 @@
-# Система управления банковскими картами
+# Bank Card Management System для Effective Mobile
 
-Описать данный файл по ТЗ
+### Через Docker
+```bash
+mvn clean package
+docker-compose up -d
+
+### После запуска
+- Приложение: http://localhost:8080
+- Swagger: http://localhost:8080/swagger-ui.html
+
+###  Тестовые пользователи
+- ADMIN: admin / admin123
+- USER: user / user123
